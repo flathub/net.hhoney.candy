@@ -17,14 +17,16 @@ modules:
 
   - type: git
     url: https://github.com/HarmonyHoney/CandyWrapper
-    commit: 426eef4a4612d62c9748fbcd4e8396ed18823e9e
+    tag: 2025.02.23
+    commit: 0f3dc04891b041d066b674f6be1b7c8267a9f926
 
   - type: file
-    url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/4.3/Candy.pck
-    sha256: 7c11ea89cf8695a733f576fe8ef4649f546c986372b47e5e31804f65b353f717
+    url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/2025.02.23/candy.pck
+    sha256: 3edeca8a9a92e1b9314450291b7b6ff0293c0302792554128f590d3127f47a38
 
   build-commands:
-  - install -Dm644 Candy.pck ${FLATPAK_DEST}/bin/godot-runner.pck
+  - install -Dm644 candy.pck ${FLATPAK_DEST}/bin/godot-runner.pck
   - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-  - install -Dm644 Image/picon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+  - install -Dm644 linux/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+  - install -Dm644 linux/${FLATPAK_ID}-symbolic.svg ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg
   - install -Dm644 linux/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
