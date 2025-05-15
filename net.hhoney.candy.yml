@@ -2,7 +2,7 @@ id: net.hhoney.candy
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 base: org.godotengine.godot.BaseApp
-base-version: '4.3-24.08'
+base-version: '4.4'
 sdk: org.freedesktop.Sdk
 command: godot-runner
 finish-args:
@@ -17,15 +17,16 @@ modules:
 
   - type: git
     url: https://github.com/HarmonyHoney/CandyWrapper
-    tag: 2025.02.23
-    commit: 0f3dc04891b041d066b674f6be1b7c8267a9f926
+    tag: 2025.05.12
+    commit: 4dfa90acdf8fc22b0f92b635bfa5a4d3feff532f
 
   - type: file
-    url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/2025.02.23/candy.pck
-    sha256: 3edeca8a9a92e1b9314450291b7b6ff0293c0302792554128f590d3127f47a38
+    url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/2025.05.12/Candy.pck
+    sha256: 363fa15ee920c46ba8cdd998cfa27b5b7dbc9f17b39e07285898b76eb5f043c5
+    dest-filename: godot-runner.pck
 
   build-commands:
-  - install -Dm644 candy.pck ${FLATPAK_DEST}/bin/godot-runner.pck
+  - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
   - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
   - install -Dm644 linux/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
   - install -Dm644 linux/${FLATPAK_ID}-symbolic.svg ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg
