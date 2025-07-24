@@ -17,13 +17,23 @@ modules:
 
   - type: git
     url: https://github.com/HarmonyHoney/CandyWrapper
-    tag: 2025.05.12
+    tag: 2025.07.23
     commit: 4dfa90acdf8fc22b0f92b635bfa5a4d3feff532f
+    x-checker-data:
+      type: json
+      url: https://api.github.com/repos/HarmonyHoney/CandyWrapper/releases/latest
+      tag-query: .tag_name
 
   - type: file
-    url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/2025.05.12/Candy.pck
-    sha256: 363fa15ee920c46ba8cdd998cfa27b5b7dbc9f17b39e07285898b76eb5f043c5
+    url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/2025.07.23/Candy.pck
+    sha256: 55e6a6d9112af13990a62273f6f392b972995c2855550b5861fec3cc5a58cec4
     dest-filename: godot-runner.pck
+    x-checker-data:
+      type: json
+      url: https://api.github.com/repos/HarmonyHoney/CandyWrapper/releases/latest
+      version-query: .tag_name
+      url-query: '"https://github.com/HarmonyHoney/CandyWrapper/releases/download/" +
+        $version + "/candy-ci-" + $version + ".pck"'
 
   build-commands:
   - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
