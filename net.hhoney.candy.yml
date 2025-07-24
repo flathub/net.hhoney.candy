@@ -18,7 +18,7 @@ modules:
   - type: git
     url: https://github.com/HarmonyHoney/CandyWrapper
     tag: 2025.07.23
-    commit: 4dfa90acdf8fc22b0f92b635bfa5a4d3feff532f
+    commit: c9cf5f5df8e808d503cd635c9634b5f702252f12
     x-checker-data:
       type: json
       url: https://api.github.com/repos/HarmonyHoney/CandyWrapper/releases/latest
