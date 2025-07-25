@@ -6,38 +6,38 @@ base-version: '4.4'
 sdk: org.freedesktop.Sdk
 command: godot-runner
 finish-args:
-- --share=ipc
-- --socket=x11
-- --socket=pulseaudio
-- --device=all
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --device=all
 modules:
-- name: candy
-  buildsystem: simple
-  sources:
+  - name: candy
+    buildsystem: simple
+    sources:
 
-  - type: git
-    url: https://github.com/HarmonyHoney/CandyWrapper
-    tag: 2025.07.23
-    commit: c9cf5f5df8e808d503cd635c9634b5f702252f12
-    x-checker-data:
-      type: json
-      url: https://api.github.com/repos/HarmonyHoney/CandyWrapper/releases/latest
-      tag-query: .tag_name
+      - type: git
+        url: https://github.com/HarmonyHoney/CandyWrapper
+        tag: 2025.07.23+2
+        commit: fd8d38f31565004fc2b3c933feb5b4a64e573f63
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/HarmonyHoney/CandyWrapper/releases/latest
+          tag-query: .tag_name
 
-  - type: file
-    url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/2025.07.23/Candy.pck
-    sha256: 55e6a6d9112af13990a62273f6f392b972995c2855550b5861fec3cc5a58cec4
-    dest-filename: godot-runner.pck
-    x-checker-data:
-      type: json
-      url: https://api.github.com/repos/HarmonyHoney/CandyWrapper/releases/latest
-      version-query: .tag_name
-      url-query: '"https://github.com/HarmonyHoney/CandyWrapper/releases/download/" +
-        $version + "/candy-ci-" + $version + ".pck"'
+      - type: file
+        url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/2025.07.23+2/candy-ci-2025.07.23+2.pck
+        sha256: bb52a18339df23357858f7b2c43579d09cb90edbd543e7e9e7061e3a5068b58c
+        dest-filename: godot-runner.pck
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/HarmonyHoney/CandyWrapper/releases/latest
+          version-query: .tag_name
+          url-query: '"https://github.com/HarmonyHoney/CandyWrapper/releases/download/"
+            + $version + "/candy-ci-" + $version + ".pck"'
 
-  build-commands:
-  - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
-  - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-  - install -Dm644 linux/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
-  - install -Dm644 linux/${FLATPAK_ID}-symbolic.svg ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg
-  - install -Dm644 linux/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
+    build-commands:
+      - install -Dm644 godot-runner.pck ${FLATPAK_DEST}/bin/godot-runner.pck
+      - install -Dm644 linux/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm644 linux/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      - install -Dm644 linux/${FLATPAK_ID}-symbolic.svg ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg
+      - install -Dm644 linux/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
