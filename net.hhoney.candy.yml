@@ -6,10 +6,10 @@ base-version: '4.4'
 sdk: org.freedesktop.Sdk
 command: godot-runner
 finish-args:
-- --share=ipc
-- --socket=x11
-- --socket=pulseaudio
-- --device=all
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --device=all
 modules:
   - name: candy
     buildsystem: simple
@@ -17,15 +17,15 @@ modules:
 
       - type: git
         url: https://github.com/HarmonyHoney/CandyWrapper
-        tag: 2025.07.23+1
-        commit: e90392957c492d55c2c09b74d1bc60f97cc3dcba
+        tag: 2025.07.23+2
+        commit: fd8d38f31565004fc2b3c933feb5b4a64e573f63
         x-checker-data:
           type: json
           url: https://api.github.com/repos/HarmonyHoney/CandyWrapper/releases/latest
           tag-query: .tag_name
 
       - type: file
-        url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/2025.07.23+1/candy-ci-2025.07.23+1.pck
+        url: https://github.com/HarmonyHoney/CandyWrapper/releases/download/2025.07.23+2/candy-ci-2025.07.23+2.pck
         sha256: bb52a18339df23357858f7b2c43579d09cb90edbd543e7e9e7061e3a5068b58c
         dest-filename: godot-runner.pck
         x-checker-data:
