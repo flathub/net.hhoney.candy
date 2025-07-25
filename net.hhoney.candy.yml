@@ -6,10 +6,10 @@ base-version: '4.4'
 sdk: org.freedesktop.Sdk
 command: godot-runner
 finish-args:
-  - --share=ipc
-  - --socket=x11
-  - --socket=pulseaudio
-  - --device=all
+- --share=ipc
+- --socket=x11
+- --socket=pulseaudio
+- --device=all
 modules:
   - name: candy
     buildsystem: simple
